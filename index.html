@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gry Retro</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Witaj w Retro Games</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="login.html">Logowanie</a></li>
+            <li><a href="register.html">Rejestracja</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Wybierz grę</h2>
+        <div class="game" id="game1" onclick="redirectToGame('https://www.retrogames.cc/embed/17236-sonic-the-hedgehog-2-world-rev-a.html')">
+            <div class="game-title">Sonic the Hedgehog 2</div>
+        </div>
+        <!-- Dodaj więcej gier w podobny sposób -->
+    </main>
+    
+    <iframe id="gameFrame" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+
+    <script>
+        function redirectToGame(gameUrl) {
+            const gameFrame = document.getElementById('gameFrame');
+            gameFrame.src = gameUrl;
+            window.location.href = "game.html"; // Przekierowanie na inną stronę z wybraną grą
+        }
+    </script>
+</body>
+</html>

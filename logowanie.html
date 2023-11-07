@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logowanie i Rejestracja</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="logowanie.html">Logowanie</a></li>
+    </ul>
+</nav>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Zaloguj lub Zarejestruj się</h2>
+            <form id="login-form">
+                <h3>Logowanie</h3>
+                <input type="text" id="login-username" placeholder="Nazwa użytkownika" required>
+                <input type="password" id="login-password" placeholder="Hasło" required>
+                <button type="submit">Zaloguj się</button>
+            </form>
+
+            <form id="register-form">
+                <h3>Rejestracja</h3>
+                <input type="text" id="register-username" placeholder="Nowa nazwa użytkownika" required>
+                <input type="password" id="register-password" placeholder="Nowe hasło" required>
+                <button type="submit">Zarejestruj się</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Prosta logika logowania i rejestracji
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            // Tutaj można dodać logikę uwierzytelniania
+            if (username && password) {
+                // Zalogowano pomyślnie
+                alert('Zalogowano pomyślnie jako ' + username);
+            } else {
+                alert('Błąd logowania. Spróbuj ponownie.');
+            }
+        });
+
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const newUsername = document.getElementById('register-username').value;
+            const newPassword = document.getElementById('register-password').value;
+            // Tutaj można dodać logikę rejestracji
+            if (newUsername && newPassword) {
+                // Zarejestrowano pomyślnie
+                alert('Zarejestrowano pomyślnie jako ' + newUsername);
+            } else {
+                alert('Błąd rejestracji. Spróbuj ponownie.');
+            }
+        });
+    </script>
+</body>
+</html>
